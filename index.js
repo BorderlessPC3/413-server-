@@ -51,6 +51,10 @@ const requireApiKey = (req, res, next) => {
   return next();
 };
 
+app.get("/", (_req, res) => {
+  return res.status(200).send("server up (413)");
+});
+
 app.get("/health", (_req, res) => {
   return res.status(200).json({
     status: "ok",
